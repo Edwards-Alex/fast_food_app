@@ -1,10 +1,14 @@
 import { images, offers } from "@/constants";
 import { Fragment } from "react";
-import { FlatList,Pressable, SafeAreaView,View,Text,Image, TouchableOpacity, ScrollView } from "react-native";
+import { FlatList,Pressable, SafeAreaView,View,Text,Image, TouchableOpacity, ScrollView, Button } from "react-native";
 import cn from 'clsx';
 import CartButton from "@/components/CartButton";
+import useAuthStore from "@/store/auth.store";
  
 export default function Index() {
+
+  const { user } = useAuthStore();
+
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView>
@@ -60,6 +64,7 @@ export default function Index() {
           </View>
 
           <CartButton></CartButton>
+        
         </View>)}
       />
       </ScrollView>
