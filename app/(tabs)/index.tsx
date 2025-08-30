@@ -1,9 +1,9 @@
-import { images, offers } from "@/constants";
-import { Fragment } from "react";
-import { FlatList,Pressable, SafeAreaView,View,Text,Image, TouchableOpacity, ScrollView, Button } from "react-native";
-import cn from 'clsx';
 import CartButton from "@/components/CartButton";
+import { images, offers } from "@/constants";
 import useAuthStore from "@/store/auth.store";
+import cn from 'clsx';
+import { Fragment } from "react";
+import { FlatList, Image, Pressable, SafeAreaView, Text, TouchableOpacity, View } from "react-native";
  
 export default function Index() {
 
@@ -11,7 +11,7 @@ export default function Index() {
 
   return (
     <SafeAreaView className="flex-1 bg-white">
-      <ScrollView>
+      <View className="flex-1">
         
         {/* container */}
         <FlatList 
@@ -63,11 +63,11 @@ export default function Index() {
             </TouchableOpacity>
           </View>
 
-          <CartButton></CartButton>
+          <CartButton />
         
         </View>)}
       />
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
